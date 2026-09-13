@@ -6,7 +6,7 @@ import QueuePanel from './QueuePanel'
 import SideBar from './SideBar'
 import AeroShards from './AeroShards/AeroShards'
 
-function Layout() {
+function Layout({children}) {
   return (
     <div className="h-screen flex flex-col text-white relative overflow-hidden">
       <div className="fixed inset-0 -z-10">
@@ -21,7 +21,7 @@ function Layout() {
       <Header/>
       <div id='MainContent' className="flex flex-1 overflow-hidden">
         <SideBar/>
-        <MainComp/>
+        <MainComp>{children}</MainComp>
         <QueuePanel/>
       </div>
       <Playbar/>
