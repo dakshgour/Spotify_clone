@@ -5,10 +5,11 @@ import SearchPage from './pages/SearchPage'
 import PlaylistPage from './pages/PlaylistPage'
 import Profile from './pages/Profile'
 import LikedSongs from './pages/LikedSongs'
-
+import { useState } from 'react'
 function App() {
+  const [CurrSong,setCurrSong] = useState(null)
   return (
-    <Layout>
+    <Layout currentSong ={CurrSong}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<SearchPage />} />

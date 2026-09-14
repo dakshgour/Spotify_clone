@@ -1,7 +1,6 @@
 import React from 'react'
 import { SkipBack, Play, SkipForward, Volume2 } from 'lucide-react'
-
-function Playbar() {
+function Playbar({currentSong}) {
   return (
     <div className="h-20 border-t border-neutral-800 flex items-center px-4 shrink-0 justify-between">
       <div className="flex items-center gap-3 w-64">

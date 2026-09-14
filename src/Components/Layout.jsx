@@ -6,7 +6,7 @@ import QueuePanel from './QueuePanel'
 import SideBar from './SideBar'
 import AeroShards from './AeroShards/AeroShards'
 
-function Layout({children}) {
+function Layout({children,currentSong}) {
   return (
     <div className="h-screen flex flex-col text-white relative overflow-hidden">
       <div className="fixed inset-0 -z-10">
@@ -24,7 +24,7 @@ function Layout({children}) {
         <MainComp>{children}</MainComp>
         <QueuePanel/>
       </div>
-      <Playbar/>
+      <Playbar currentSong={currentSong} />
     </div>
   )
 }
