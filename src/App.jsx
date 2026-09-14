@@ -11,7 +11,7 @@ function App() {
   return (
     <Layout currentSong ={CurrSong}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setCurrSong={setCurrSong} />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
         <Route path="/profile" element={<Profile />} />
