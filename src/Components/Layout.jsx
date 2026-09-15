@@ -5,8 +5,10 @@ import Playbar from './Playbar'
 import QueuePanel from './QueuePanel'
 import SideBar from './SideBar'
 import AeroShards from './AeroShards/AeroShards'
+import { useState } from 'react'
 
 function Layout({children,currentSong}) {
+  const [queueOpen,setqueueOpen] = useState(true)
   return (
     <div className="h-screen flex flex-col text-white relative overflow-hidden">
       <div className="fixed inset-0 -z-10">
@@ -22,9 +24,9 @@ function Layout({children,currentSong}) {
       <div id='MainContent' className="flex flex-1 overflow-hidden">
         <SideBar/>
         <MainComp>{children}</MainComp>
-        <QueuePanel/>
+        {queueOpen && <QueuePanel />}
       </div>
-      <Playbar currentSong={currentSong} />
+      <Playbar currentSong={currentSong}  queueOpen = {queueOpen} setqueueOpen ={setqueueOpen}/>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import songs from '../data/songs'
 
 function QueuePanel() {
   return (
-    <div className="w-72 border-l border-neutral-800 overflow-y-auto p-4 shrink-0 flex flex-col gap-4">
+    <div className="w-72 border-l border-neutral-800 overflow-y-auto p-4 shrink-0 flex flex-col gap-4 select-none">
       <div className="text-lg font-bold">Now Playing Queue</div>
       {songs.map((song) => (
         <div key={song.id} className="flex items-center gap-3 hover:bg-neutral-800 p-2 rounded cursor-pointer transition">
