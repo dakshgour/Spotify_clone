@@ -4,12 +4,15 @@ import Home from './pages/Home'
 import SearchPage from './pages/SearchPage'
 import PlaylistPage from './pages/PlaylistPage'
 import Profile from './pages/Profile'
+import playlists from './data/playlists'
 import LikedSongs from './pages/LikedSongs'
 import { useState } from 'react'
 function App() {
   const [CurrSong,setCurrSong] = useState(null)
+  const [AddNewPlaylist,setAddNewPlaylist]=useState(false)
+  const [playlistData, setPlaylistData] = useState(playlists)
   return (
-    <Layout currentSong ={CurrSong}>
+    <Layout currentSong ={CurrSong} setAddNewPlaylist={setAddNewPlaylist}  AddNewPlaylist={AddNewPlaylist} playlistData={playlistData}>
       <Routes>
         <Route path="/" element={<Home setCurrSong={setCurrSong} />} />
         <Route path="/search" element={<SearchPage />} />

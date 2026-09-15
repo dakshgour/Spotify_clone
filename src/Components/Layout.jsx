@@ -7,7 +7,7 @@ import SideBar from './SideBar'
 import AeroShards from './AeroShards/AeroShards'
 import { useState } from 'react'
 
-function Layout({children,currentSong}) {
+function Layout({children,currentSong,setAddNewPlaylist, AddNewPlaylist,playlistData}) {
   const [queueOpen,setqueueOpen] = useState(true)
   return (
     <div className="h-screen flex flex-col text-white relative overflow-hidden">
@@ -22,7 +22,7 @@ function Layout({children,currentSong}) {
 
       <Header/>
       <div id='MainContent' className="flex flex-1 overflow-hidden">
-        <SideBar/>
+        <SideBar setAddNewPlaylist={setAddNewPlaylist} AddNewPlaylist={AddNewPlaylist} playlistData={playlistData}/>
         <MainComp>{children}</MainComp>
         {queueOpen && <QueuePanel />}
       </div>
