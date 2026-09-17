@@ -12,7 +12,7 @@ function App() {
   const [AddNewPlaylist,setAddNewPlaylist]=useState(false)
   const [playlistData, setPlaylistData] = useState(playlists)
   return (
-    <Layout currentSong ={CurrSong} setAddNewPlaylist={setAddNewPlaylist}  AddNewPlaylist={AddNewPlaylist} playlistData={playlistData}>
+    <Layout currentSong ={CurrSong} setAddNewPlaylist={setAddNewPlaylist}  AddNewPlaylist={AddNewPlaylist} playlistData={playlistData} setPlaylistData={setPlaylistData}>
       <Routes>
         <Route path="/" element={<Home setCurrSong={setCurrSong} />} />
         <Route path="/search" element={<SearchPage />} />
