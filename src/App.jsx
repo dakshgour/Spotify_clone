@@ -15,7 +15,7 @@ function App() {
     <Layout currentSong ={CurrSong} setAddNewPlaylist={setAddNewPlaylist}  AddNewPlaylist={AddNewPlaylist} playlistData={playlistData} setPlaylistData={setPlaylistData}>
       <Routes>
         <Route path="/" element={<Home setCurrSong={setCurrSong} />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/search" element={<SearchPage setCurrSong={setCurrSong} />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/liked" element={<LikedSongs />} />
